@@ -25,7 +25,7 @@ namespace DatingApp.API
     public class Startup
     {
         public Startup(IConfiguration configuration)
-        {
+        { // made a change for git
             Configuration = configuration;
         }
 
