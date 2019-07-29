@@ -31,7 +31,7 @@ export class MemberEditComponent implements OnInit {
       const key = 'user';
       this.user = data[key];
     });
-    this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl);
+    this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
   updateUser() {
     this.userService.updateUser(this.authService.decodedToken.nameid, this.user).subscribe(next => {

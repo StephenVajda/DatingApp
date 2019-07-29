@@ -107,8 +107,9 @@ public async Task<IActionResult> SetMainPhoto(int userId, int id)
             currentMainPhoto.IsMain = false;
             photoFromRepo.IsMain = true;
             if ( await _repo.SaveAll())
+                    return NoContent();
                 return BadRequest("Could not set photo to main");
-            return NoContent();
+            
         }
         [HttpDeleteAttribute("{id}")]
         public async Task<IActionResult> DeletePhoto(int userId, int id){

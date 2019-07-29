@@ -12,7 +12,7 @@ export class UserService {
 
   baseUrl = environment.apiUrl;
   constructor(private http: HttpClient,
-    private alertify: AlertifyService) { }
+              private alertify: AlertifyService) { }
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl + 'users');
   }
