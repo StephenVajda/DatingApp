@@ -50,6 +50,7 @@ namespace DatingApp.API.Data
             .OrderByDescending(u => u.LastActive).AsQueryable();
             users = users.Where(u => u.Id != userParams.UserId);
             users = users.Where(u => u.Gender == userParams.Gender);
+            
             if(userParams.Likers){
                 var userLikers= await GetUserLikes(userParams.UserId, userParams.Likers);
                 users=users.Where(u => userLikers.Contains(u.Id));
