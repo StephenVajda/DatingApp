@@ -82,7 +82,7 @@ namespace DatingApp.API.Controllers
             like= new Like{
                 LikerId=id,
                 LikeeId=recipientId
-            }
+            };
             _repo.Add<Like>(like);
             if(await _repo.SaveAll())
             return Ok();
